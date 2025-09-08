@@ -1,14 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { OnboardingFlow } from "@/components/OnboardingFlow";
+import { Dashboard } from "@/components/Dashboard";
 
 const Index = () => {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
+  const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState(false);
+
+  const handleOnboardingComplete = () => {
+    setHasCompletedOnboarding(true);
+    // Aqui você salvaria no localStorage que o usuário completou o onboarding
+    localStorage.setItem('pare_onboarding_completed', 'true');
+  };
+
+  // Verificar se já completou o onboarding
+  const checkOnboarding = () => {
+    const completed = localStorage.getItem('pare_onboarding_completed');
+    return completed === 'true' || hasCompletedOnboarding;
+  };
+
+  if (!checkOnboarding()) {
+    return <OnboardingFlow onComplete={handleOnboardingComplete} />;
+  }
+
+  return <Dashboard />;
 };
 
 export default Index;
