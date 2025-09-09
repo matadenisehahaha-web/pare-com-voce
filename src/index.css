@@ -8,108 +8,178 @@ Todas as cores devem ser HSL para consistência
 
 @layer base {
   :root {
-    /* Backgrounds suaves */
+    /* Backgrounds suaves e modernos */
     --background: 210 25% 98%;
     --foreground: 210 15% 20%;
+    --background-subtle: 210 30% 96%;
 
-    /* Cards com sombras suaves */
+    /* Cards com elevação visual aprimorada */
     --card: 210 20% 99%;
     --card-foreground: 210 15% 25%;
+    --card-hover: 210 25% 97%;
 
-    /* Popovers */
+    /* Popovers e dropdowns */
     --popover: 210 20% 99%;
     --popover-foreground: 210 15% 25%;
 
-    /* Azul terapêutico como cor principal */
-    --primary: 210 80% 55%;
+    /* Sistema de cores primárias terapêuticas */
+    --primary: 210 85% 58%;
     --primary-foreground: 210 20% 98%;
-    --primary-glow: 210 80% 65%;
+    --primary-glow: 210 85% 68%;
+    --primary-muted: 210 60% 85%;
 
-    /* Verde suave para apoio */
-    --secondary: 150 40% 60%;
+    /* Verde terapêutico para apoio e crescimento */
+    --secondary: 142 48% 55%;
     --secondary-foreground: 210 20% 98%;
+    --secondary-muted: 142 30% 85%;
 
-    /* Tons neutros suaves */
-    --muted: 210 15% 96%;
-    --muted-foreground: 210 10% 55%;
+    /* Tons neutros refinados */
+    --muted: 210 18% 96%;
+    --muted-foreground: 210 12% 50%;
+    --muted-dark: 210 15% 88%;
 
-    /* Accent verde-azulado */
-    --accent: 180 50% 70%;
+    /* Accent azul-turquesa para destaques */
+    --accent: 180 55% 65%;
     --accent-foreground: 210 15% 25%;
+    --accent-muted: 180 35% 88%;
 
-    /* Vermelho suave para emergência */
-    --destructive: 0 60% 65%;
+    /* Sistema de alertas e estados */
+    --destructive: 0 65% 62%;
     --destructive-foreground: 210 20% 98%;
+    --destructive-muted: 0 45% 90%;
 
-    /* Bordas e inputs sutis */
-    --border: 210 20% 90%;
-    --input: 210 20% 95%;
-    --ring: 210 80% 55%;
+    --warning: 45 90% 60%;
+    --warning-foreground: 210 20% 15%;
+    --warning-muted: 45 70% 90%;
 
-    /* Cores mais escuras e suaves */
-    --radius: 1rem;
+    --success: 142 60% 50%;
+    --success-foreground: 210 20% 98%;
+    --success-muted: 142 40% 85%;
 
-    /* Gradientes terapêuticos */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-calm: linear-gradient(135deg, hsl(210 60% 50%), hsl(180 50% 60%));
-    --gradient-emergency: linear-gradient(135deg, hsl(0 60% 60%), hsl(20 70% 65%));
-    --gradient-support: linear-gradient(135deg, hsl(150 40% 55%), hsl(180 50% 65%));
+    /* Inputs e controles */
+    --border: 210 22% 88%;
+    --input: 210 25% 94%;
+    --input-focus: 210 30% 92%;
+    --ring: 210 85% 58%;
 
-    /* Sombras suaves */
-    --shadow-soft: 0 2px 20px -5px hsl(var(--primary) / 0.1);
-    --shadow-card: 0 4px 25px -10px hsl(var(--primary) / 0.15);
-    --shadow-emergency: 0 4px 25px -10px hsl(0 60% 60% / 0.2);
+    /* Border radius modernizado */
+    --radius: 0.75rem;
 
-    /* Animações suaves */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Gradientes terapêuticos premium */
+    --gradient-primary: linear-gradient(135deg, hsl(210 85% 58%) 0%, hsl(210 85% 68%) 100%);
+    --gradient-calm: linear-gradient(135deg, hsl(210 65% 55%) 0%, hsl(180 55% 62%) 100%);
+    --gradient-emergency: linear-gradient(135deg, hsl(0 65% 62%) 0%, hsl(15 75% 68%) 100%);
+    --gradient-support: linear-gradient(135deg, hsl(142 48% 55%) 0%, hsl(160 50% 60%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 60% 50%) 0%, hsl(120 55% 58%) 100%);
+
+    /* Sistema de sombras aprimorado */
+    --shadow-xs: 0 1px 3px 0 hsl(var(--primary) / 0.05);
+    --shadow-sm: 0 2px 8px -2px hsl(var(--primary) / 0.08);
+    --shadow-md: 0 4px 16px -4px hsl(var(--primary) / 0.12);
+    --shadow-lg: 0 8px 25px -8px hsl(var(--primary) / 0.15);
+    --shadow-xl: 0 12px 40px -12px hsl(var(--primary) / 0.18);
+    
+    --shadow-soft: var(--shadow-sm);
+    --shadow-card: var(--shadow-md);
+    --shadow-emergency: 0 4px 25px -10px hsl(0 65% 62% / 0.2);
+    --shadow-glow: 0 0 25px -5px hsl(var(--primary) / 0.25);
+
+    /* Transições e timing aprimorados */
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Espaçamentos harmônicos */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
   }
 
   .dark {
-    /* Background escuro mais suave */
-    --background: 210 20% 8%;
-    --foreground: 210 15% 92%;
+    /* Background escuro premium */
+    --background: 210 25% 6%;
+    --foreground: 210 15% 94%;
+    --background-subtle: 210 22% 8%;
 
-    /* Cards escuros com contraste suave */
-    --card: 210 20% 12%;
-    --card-foreground: 210 15% 88%;
+    /* Cards escuros com melhor contraste */
+    --card: 210 22% 10%;
+    --card-foreground: 210 15% 90%;
+    --card-hover: 210 25% 12%;
 
     /* Popovers escuros */
-    --popover: 210 20% 10%;
-    --popover-foreground: 210 15% 90%;
+    --popover: 210 22% 8%;
+    --popover-foreground: 210 15% 92%;
 
-    /* Azul mais claro no modo escuro */
-    --primary: 210 70% 65%;
-    --primary-foreground: 210 20% 8%;
-    --primary-glow: 210 70% 75%;
+    /* Sistema primário adaptado para escuro */
+    --primary: 210 80% 70%;
+    --primary-foreground: 210 25% 8%;
+    --primary-glow: 210 80% 78%;
+    --primary-muted: 210 50% 25%;
 
-    /* Verde suave no escuro */
-    --secondary: 150 40% 55%;
-    --secondary-foreground: 210 20% 8%;
+    /* Verde terapêutico no escuro */
+    --secondary: 142 45% 60%;
+    --secondary-foreground: 210 25% 8%;
+    --secondary-muted: 142 30% 22%;
 
-    /* Neutros escuros */
-    --muted: 210 15% 18%;
-    --muted-foreground: 210 10% 65%;
+    /* Neutros escuros refinados */
+    --muted: 210 18% 16%;
+    --muted-foreground: 210 12% 68%;
+    --muted-dark: 210 15% 22%;
 
-    /* Accent claro */
-    --accent: 180 50% 60%;
-    --accent-foreground: 210 15% 15%;
+    /* Accent para modo escuro */
+    --accent: 180 50% 65%;
+    --accent-foreground: 210 18% 12%;
+    --accent-muted: 180 30% 20%;
 
-    /* Vermelho suave no escuro */
-    --destructive: 0 60% 60%;
-    --destructive-foreground: 210 20% 95%;
+    /* Estados de alerta no escuro */
+    --destructive: 0 65% 68%;
+    --destructive-foreground: 210 22% 8%;
+    --destructive-muted: 0 35% 20%;
 
-    /* Bordas escuras */
-    --border: 210 20% 20%;
-    --input: 210 20% 15%;
-    --ring: 210 70% 65%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --warning: 45 85% 65%;
+    --warning-foreground: 210 22% 8%;
+    --warning-muted: 45 60% 18%;
+
+    --success: 142 55% 55%;
+    --success-foreground: 210 22% 8%;
+    --success-muted: 142 35% 18%;
+
+    /* Controles no escuro */
+    --border: 210 22% 18%;
+    --input: 210 25% 12%;
+    --input-focus: 210 28% 14%;
+    --ring: 210 80% 70%;
+
+    /* Gradientes adaptados */
+    --gradient-primary: linear-gradient(135deg, hsl(210 80% 70%) 0%, hsl(210 80% 78%) 100%);
+    --gradient-calm: linear-gradient(135deg, hsl(210 65% 60%) 0%, hsl(180 50% 65%) 100%);
+    --gradient-emergency: linear-gradient(135deg, hsl(0 65% 68%) 0%, hsl(15 70% 72%) 100%);
+    --gradient-support: linear-gradient(135deg, hsl(142 45% 60%) 0%, hsl(160 45% 62%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 55% 55%) 0%, hsl(120 50% 60%) 100%);
+
+    /* Sombras adaptadas para escuro */
+    --shadow-xs: 0 1px 3px 0 hsl(0 0% 0% / 0.3);
+    --shadow-sm: 0 2px 8px -2px hsl(0 0% 0% / 0.4);
+    --shadow-md: 0 4px 16px -4px hsl(0 0% 0% / 0.5);
+    --shadow-lg: 0 8px 25px -8px hsl(0 0% 0% / 0.6);
+    --shadow-xl: 0 12px 40px -12px hsl(0 0% 0% / 0.7);
+    
+    --shadow-soft: var(--shadow-sm);
+    --shadow-card: var(--shadow-md);
+    --shadow-emergency: 0 4px 25px -10px hsl(0 65% 68% / 0.4);
+    --shadow-glow: 0 0 25px -5px hsl(var(--primary) / 0.4);
+
+    /* Sidebar no modo escuro */
+    --sidebar-background: 210 25% 8%;
+    --sidebar-foreground: 210 15% 92%;
+    --sidebar-primary: 210 80% 70%;
+    --sidebar-primary-foreground: 210 25% 8%;
+    --sidebar-accent: 210 22% 12%;
+    --sidebar-accent-foreground: 210 15% 90%;
+    --sidebar-border: 210 22% 16%;
+    --sidebar-ring: 210 80% 70%;
   }
 }
 
@@ -124,7 +194,7 @@ Todas as cores devem ser HSL para consistência
 }
 
 @layer components {
-  /* Utility classes específicas do P.A.R.E. */
+  /* Sistema de gradientes P.A.R.E. */
   .gradient-primary {
     background: var(--gradient-primary);
   }
@@ -140,41 +210,150 @@ Todas as cores devem ser HSL para consistência
   .gradient-support {
     background: var(--gradient-support);
   }
-  
-  .shadow-soft {
-    box-shadow: var(--shadow-soft);
+
+  .gradient-success {
+    background: var(--gradient-success);
   }
   
-  .shadow-card {
-    box-shadow: var(--shadow-card);
-  }
+  /* Sistema de sombras premium */
+  .shadow-xs { box-shadow: var(--shadow-xs); }
+  .shadow-sm { box-shadow: var(--shadow-sm); }
+  .shadow-md { box-shadow: var(--shadow-md); }
+  .shadow-lg { box-shadow: var(--shadow-lg); }
+  .shadow-xl { box-shadow: var(--shadow-xl); }
   
-  .shadow-emergency {
-    box-shadow: var(--shadow-emergency);
-  }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-emergency { box-shadow: var(--shadow-emergency); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
   
-  .transition-smooth {
-    transition: var(--transition-smooth);
+  /* Sistema de transições */
+  .transition-smooth { transition: var(--transition-smooth); }
+  .transition-fast { transition: var(--transition-fast); }
+  .transition-slow { transition: var(--transition-slow); }
+
+  /* Componentes interativos aprimorados */
+  .card-interactive {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 cursor-pointer;
   }
 
-  /* Animações terapêuticas */
+  .button-glow {
+    @apply shadow-glow hover:shadow-xl transition-all duration-300;
+  }
+
+  .input-focus {
+    @apply focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200;
+  }
+
+  /* Estados visuais melhorados */
+  .state-success {
+    @apply bg-success/10 border-success/20 text-success-foreground;
+  }
+
+  .state-warning {
+    @apply bg-warning/10 border-warning/20 text-warning-foreground;
+  }
+
+  .state-error {
+    @apply bg-destructive/10 border-destructive/20 text-destructive-foreground;
+  }
+
+  /* Animações terapêuticas melhoradas */
   .animate-breathe {
     animation: breathe 4s ease-in-out infinite;
   }
   
   .animate-gentle-pulse {
-    animation: gentle-pulse 2s ease-in-out infinite;
+    animation: gentle-pulse 2.5s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out;
+  }
+
+  /* Componentes especiais P.A.R.E. */
+  .emergency-pulse {
+    animation: emergency-pulse 1.5s ease-in-out infinite;
+  }
+
+  .success-bounce {
+    animation: success-bounce 0.5s ease-out;
   }
 }
 
 @layer utilities {
   @keyframes breathe {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    0%, 100% { 
+      transform: scale(1);
+      box-shadow: var(--shadow-soft);
+    }
+    50% { 
+      transform: scale(1.08);
+      box-shadow: var(--shadow-glow);
+    }
   }
   
   @keyframes gentle-pulse {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
+    50% { opacity: 0.75; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-4px); }
+  }
+
+  @keyframes scale-in {
+    0% { 
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    100% { 
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes emergency-pulse {
+    0%, 100% { 
+      background: var(--gradient-emergency);
+      transform: scale(1);
+    }
+    50% { 
+      background: var(--gradient-emergency);
+      transform: scale(1.02);
+      filter: brightness(1.1);
+    }
+  }
+
+  @keyframes success-bounce {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.05); }
+    50% { transform: scale(0.98); }
+    100% { transform: scale(1); }
+  }
+
+  /* Utilitários de espaçamento harmônico */
+  .space-xs { gap: var(--space-xs); }
+  .space-sm { gap: var(--space-sm); }
+  .space-md { gap: var(--space-md); }
+  .space-lg { gap: var(--space-lg); }
+  .space-xl { gap: var(--space-xl); }
+
+  /* Utilitários de glassmorphism */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
